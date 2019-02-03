@@ -1,2 +1,0 @@
-class EventImagesController < ApplicationController
-end
