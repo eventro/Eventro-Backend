@@ -1,0 +1,1480 @@
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateLikes (20190203191222)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "event_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_7a4fd8605c"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20190203191222_create_likes.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (2.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-03 21:31:18.164149"], ["updated_at", "2019-02-03 21:31:18.164149"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (194.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "eventro_development"[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (200.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "eventro_test"[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (560.4ms)[0m  [1m[35mCREATE DATABASE "eventro_development" ENCODING = 'unicode'[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (397.0ms)[0m  [1m[35mCREATE DATABASE "eventro_test" ENCODING = 'unicode'[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateOrganizers (20190203191429)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "organizers" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "auth_token" character varying, "name" character varying, "phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190203191429_create_organizers.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_organizers_on_auth_token" ON "organizers"  ("auth_token")[0m
+  ↳ db/migrate/20190203191429_create_organizers.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191429"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-02-03 21:33:25.931690"], ["updated_at", "2019-02-03 21:33:25.931690"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateUsers (20190203191047)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "auth_token" character varying, "username" character varying, "name" character varying, "date_of_birth" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190203191047_create_users.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_auth_token" ON "users"  ("auth_token")[0m
+  ↳ db/migrate/20190203191047_create_users.rb:13
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191047"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateEvents (20190203191825)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "description" character varying, "start_date" character varying, "end_date" character varying, "location" character varying, "location_id" character varying, "logo" character varying, "organizer_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_91125650cd"
+FOREIGN KEY ("organizer_id")
+  REFERENCES "organizers" ("id")
+)[0m
+  ↳ db/migrate/20190203191825_create_events.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_organizer_id" ON "events"  ("organizer_id")[0m
+  ↳ db/migrate/20190203191825_create_events.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191825"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateLikes (20190203191222)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" bigint, "event_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_1e09b5dabf"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_7a4fd8605c"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20190203191222_create_likes.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_user_id" ON "likes"  ("user_id")[0m
+  ↳ db/migrate/20190203191222_create_likes.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_likes_on_event_id" ON "likes"  ("event_id")[0m
+  ↳ db/migrate/20190203191222_create_likes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191222"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateComments (20190203191347)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "comment" character varying, "user_id" bigint, "event_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_c6b77e33aa"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20190203191347_create_comments.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_user_id" ON "comments"  ("user_id")[0m
+  ↳ db/migrate/20190203191347_create_comments.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_event_id" ON "comments"  ("event_id")[0m
+  ↳ db/migrate/20190203191347_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191347"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateEventImages (20190203191850)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "event_images" ("id" bigserial primary key, "image" character varying, "event_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9dd6f2f888"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20190203191850_create_event_images.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_event_images_on_event_id" ON "event_images"  ("event_id")[0m
+  ↳ db/migrate/20190203191850_create_event_images.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191850"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateAttendees (20190203191912)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" bigserial primary key, "user_id" bigint, "event_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bce6bb1481"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_4037bda9d5"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  ↳ db/migrate/20190203191912_create_attendees.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_attendees_on_user_id" ON "attendees"  ("user_id")[0m
+  ↳ db/migrate/20190203191912_create_attendees.rb:3
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE  INDEX  "index_attendees_on_event_id" ON "attendees"  ("event_id")[0m
+  ↳ db/migrate/20190203191912_create_attendees.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203191912"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateFollows (20190203192123)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dba9fc3240"
+FOREIGN KEY ("follower_id_id")
+  REFERENCES "follower_ids" ("id")
+, CONSTRAINT "fk_rails_32479bd030"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190203192123_create_follows.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateFollows (20190203192123)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dba9fc3240"
+FOREIGN KEY ("follower_id_id")
+  REFERENCES "follower_ids" ("id")
+, CONSTRAINT "fk_rails_32479bd030"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190203192123_create_follows.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateFollows (20190203192123)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_dba9fc3240"
+FOREIGN KEY ("follower_id_id")
+  REFERENCES "follower_ids" ("id")
+, CONSTRAINT "fk_rails_32479bd030"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190203192123_create_follows.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateFollows (20190203214013)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (30.8ms)[0m  [1m[35mCREATE TABLE "follows" ("id" bigserial primary key, "follower_id" bigint, "followee_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190203214013_create_follows.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_follows_on_follower_id" ON "follows"  ("follower_id")[0m
+  ↳ db/migrate/20190203214013_create_follows.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_follows_on_followee_id" ON "follows"  ("followee_id")[0m
+  ↳ db/migrate/20190203214013_create_follows.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190203214013"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started POST "/users" for 127.0.0.1 at 2019-02-04 00:58:25 +0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (6.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "na@"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "nalghamdi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:15
+Completed 400 Bad Request in 112ms (Views: 0.3ms | ActiveRecord: 21.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-04 00:58:39 +0300
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "na@"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "nalghamdi"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "auth_token", "username", "name", "date_of_birth", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "na@"], ["password_digest", "$2a$10$Grl5e4HznU/YxtwtvkzkuO.l2/WcaEK4zhAky.2idcejeak0cuTvi"], ["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["username", "nalghamdi"], ["name", "N"], ["date_of_birth", "6/11/1995"], ["created_at", "2019-02-03 21:58:39.895980"], ["updated_at", "2019-02-03 21:58:39.895980"]]
+  ↳ app/controllers/users_controller.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15
+Completed 200 OK in 66ms (Views: 0.5ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/users/1" for 127.0.0.1 at 2019-02-04 00:58:56 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/users/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2019-02-04 00:59:02 +0300
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "id"=>"1"}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 00:59:35 +0300
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 00:59:40 +0300
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 00:59:42 +0300
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:16:58 +0300
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"naa@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Completed 200 OK in 26ms (Views: 0.6ms | ActiveRecord: 15.8ms)
+
+
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:17:14 +0300
+  
+ActionController::RoutingError (No route matches [PUT] "/users/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:17:31 +0300
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"naa@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "naa@"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "nalghamdi"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[36mUser Update (8.9ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["email", "naa@"], ["password_digest", "$2a$10$7tilVCkEl1kISUyekG./..CD/j780whILDaS7ozvG3ASUBWQxW1bC"], ["updated_at", "2019-02-03 22:17:31.363688"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:22
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22
+Completed 200 OK in 147ms (Views: 0.5ms | ActiveRecord: 36.1ms)
+
+
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:18:52 +0300
+  
+SyntaxError (/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/users_controller.rb:37: syntax error, unexpected end-of-input, expecting end
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:19:21 +0300
+  
+SyntaxError (/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:26: else without rescue is useless
+  else
+  ^~~~
+/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:41: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:26: else without rescue is useless
+app/controllers/users_controller.rb:41: syntax error, unexpected end, expecting end-of-input
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:19:59 +0300
+  
+SyntaxError (/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:26: else without rescue is useless
+  else
+  ^~~~
+/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:41: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/users_controller.rb:26: else without rescue is useless
+app/controllers/users_controller.rb:41: syntax error, unexpected end, expecting end-of-input
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:20:25 +0300
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "na@"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "nalghamdi"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["email", "na@"], ["password_digest", "$2a$10$8fCJCbd4SVNA6U5PvMPa0.7Flsl1Kh4G5y0DTsyaBhS0FNeH/EdPi"], ["updated_at", "2019-02-03 22:20:25.421390"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23
+Completed 200 OK in 86ms (Views: 0.4ms | ActiveRecord: 9.2ms)
+
+
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:20:38 +0300
+  
+SyntaxError (/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/users_controller.rb:26: else without rescue is useless
+  else
+  ^~~~):
+  
+app/controllers/users_controller.rb:26: else without rescue is useless
+Started PUT "/users/1?auth_token=TgAuFvd1PD6kxYekLoAkgf72" for 127.0.0.1 at 2019-02-04 01:20:49 +0300
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"N", "email"=>"na@", "password"=>"[FILTERED]", "username"=>"nalghamdi", "date_of_birth"=>"6/11/1995"}, "auth_token"=>"TgAuFvd1PD6kxYekLoAkgf72", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "TgAuFvd1PD6kxYekLoAkgf72"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "na@"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "nalghamdi"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "password_digest" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["password_digest", "$2a$10$.WTdqOn0YxCztv.EXbLUsOZEJ9g0ljEATsFLVXj9PEKb5n9AxQ2IK"], ["updated_at", "2019-02-03 22:20:49.489008"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23
+Completed 200 OK in 99ms (Views: 0.3ms | ActiveRecord: 14.9ms)
+
+
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:37:15 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:37:34 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:38:32 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:38:56 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:39:17 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"user":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:39:38 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"organizer":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"organizer":{
+	"name": "Org1",
+	"email": "org@", 
+	"password": "o12345",
+	"phone" : "0569336644",
+}
+
+}'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:40:21 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644", "organizer"=>{"email"=>"org@", "name"=>"Org1", "phone"=>"0569336644"}}
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 26.7ms)
+
+
+  
+NameError (undefined local variable or method `console' for #<OrganizersController:0x00007f8fc853cc80>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:40:33 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644", "organizer"=>{"email"=>"org@", "name"=>"Org1", "phone"=>"0569336644"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (5.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 12.5ms)
+
+
+  
+NoMethodError (undefined method `username' for #<Organizer:0x00007f8fc8721e60>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:40:51 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"user"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "organizer"=>{}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:40:59 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `username' for #<Organizer:0x00007f8fca3a67e8>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:41:45 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"user"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "organizer"=>{}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:42:03 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `username' for #<Organizer:0x00007f8fca351810>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:45:16 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 6.7ms)
+
+
+  
+NoMethodError (undefined method `username' for #<Organizer:0x00007f8fca34afd8>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:46:07 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644", "organizer"=>{"email"=>"org@", "name"=>"Org1", "phone"=>"0569336644"}}
+Unpermitted parameter: :organizer
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 14.6ms)
+
+
+  
+NoMethodError (undefined method `username' for #<Organizer:0x00007f8fca37b868>):
+  
+app/controllers/organizers_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started POST "//organizers" for 127.0.0.1 at 2019-02-04 01:47:44 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by OrganizersController#create as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[36mOrganizer Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "org@"], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[36mOrganizer Create (6.0ms)[0m  [1m[32mINSERT INTO "organizers" ("email", "password_digest", "auth_token", "name", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "org@"], ["password_digest", "$2a$10$Dhs/pfe8jBviNWzLItuw9u1U1w8HdROaz5ZGsq4RUGFRu9wxP/93e"], ["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["name", "Org1"], ["phone", "0569336644"], ["created_at", "2019-02-03 22:47:44.674837"], ["updated_at", "2019-02-03 22:47:44.674837"]]
+  ↳ app/controllers/organizers_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/organizers_controller.rb:14
+Completed 200 OK in 88ms (Views: 0.7ms | ActiveRecord: 10.9ms)
+
+
+Started GET "//organizers?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:48:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/organizers"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/1/organizers?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:48:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/1/organizers"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organizers/1/?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:48:30 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/1/?authentication_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:48:39 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "authentication_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (3.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column organizers.authentication_token does not exist
+LINE 1: SELECT  "organizers".* FROM "organizers" WHERE "organizers"....
+                                                       ^
+: SELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2):
+  
+app/controllers/application_controller.rb:13:in `requireO_token'
+Started GET "/organizers/1/?authentication_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:49:30 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "authentication_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (4.9ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 4.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column organizers.authentication_token does not exist
+LINE 1: SELECT  "organizers".* FROM "organizers" WHERE "organizers"....
+                                                       ^
+: SELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2):
+  
+app/controllers/application_controller.rb:13:in `requireO_token'
+Started GET "/organizers/1/?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:52:19 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/1/?authentication_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:52:28 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "authentication_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (7.1ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2[0m  [["authentication_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 10.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column organizers.authentication_token does not exist
+LINE 1: SELECT  "organizers".* FROM "organizers" WHERE "organizers"....
+                                                       ^
+: SELECT  "organizers".* FROM "organizers" WHERE "organizers"."authentication_token" = $1 LIMIT $2):
+  
+app/controllers/application_controller.rb:13:in `requireO_token'
+Started GET "/users/1?auth_token=jWP6bEYAcuY8kmuDTLXUfu3p" for 127.0.0.1 at 2019-02-04 01:52:51 +0300
+Processing by UsersController#show as */*
+  Parameters: {"auth_token"=>"jWP6bEYAcuY8kmuDTLXUfu3p", "id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "jWP6bEYAcuY8kmuDTLXUfu3p"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+Filter chain halted as :require_token rendered or redirected
+Completed 401 Unauthorized in 30ms (Views: 0.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/organizers/1/?authentication_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:53:15 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "authentication_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/1/?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:53:20 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336644"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 7.5ms)
+
+
+Started PUT "/organizers/1/?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 01:53:59 +0300
+Processing by OrganizersController#update as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:32
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:20
+  [1m[36mOrganizer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organizers" WHERE "organizers"."email" = $1 AND "organizers"."id" != $2 LIMIT $3[0m  [["email", "org@"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:20
+  [1m[36mOrganizer Update (0.6ms)[0m  [1m[33mUPDATE "organizers" SET "password_digest" = $1, "phone" = $2, "updated_at" = $3 WHERE "organizers"."id" = $4[0m  [["password_digest", "$2a$10$eoS5dOccnT1H.E7lU7t4q.OSlYELlDDRcXfVCNkz9v/Cm2Mvl4ikK"], ["phone", "0569336645"], ["updated_at", "2019-02-03 22:53:59.779863"], ["id", 1]]
+  ↳ app/controllers/organizers_controller.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/organizers_controller.rb:20
+Completed 200 OK in 85ms (Views: 0.4ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-02-04 02:15:15 +0300
+Processing by EventsController#all_events as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "event"=>{}}
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2019-02-04 02:16:19 +0300
+  
+SyntaxError (/Users/noni/code/wdi/Project4/Eventro-Backend/eventro/app/controllers/events_controller.rb:57: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/events_controller.rb:57: syntax error, unexpected end-of-input, expecting end
+Started GET "/events" for 127.0.0.1 at 2019-02-04 02:17:06 +0300
+Processing by EventsController#all_events as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "event"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 5.3ms)
+
+
+  
+NameError (uninitialized constant EventsController::Events):
+  
+app/controllers/events_controller.rb:7:in `all_events'
+Started GET "/events" for 127.0.0.1 at 2019-02-04 02:17:21 +0300
+Processing by EventsController#all_events as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "event"=>{}}
+  [1m[36mEvent Load (8.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 18ms (Views: 5.3ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:20:29 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (7.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 27.3ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/organizers/1/events" for 127.0.0.1 at 2019-02-04 02:21:15 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "organizer_id"=>"1", "event"=>{}}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:21:18 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (1.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:22:24 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (1.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-04 02:22:42 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/events/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:24:21 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:24:31 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (2.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/organizers/1/" for 127.0.0.1 at 2019-02-04 02:31:21 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "id"=>"1"}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/1" for 127.0.0.1 at 2019-02-04 02:31:25 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "id"=>"1"}
+Completed 422 Unprocessable Entity in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organizers/?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:31:32 +0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for OrganizersController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organizers/1?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:32:29 +0300
+Processing by OrganizersController#show as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "id"=>"1"}
+  [1m[36mOrganizer Load (1.9ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 200 OK in 26ms (Views: 13.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:32:55 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (0.5ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'
+Started GET "/organizer_events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:34:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/organizer_events"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organizers/1/events?auth_token=isxsp6d3vutsgV59U2vNiGpF" for 127.0.0.1 at 2019-02-04 02:34:50 +0300
+Processing by EventsController#index as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "auth_token"=>"isxsp6d3vutsgV59U2vNiGpF", "organizer_id"=>"1", "event"=>{}}
+  [1m[36mOrganizer Load (0.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "isxsp6d3vutsgV59U2vNiGpF"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `events' for nil:NilClass):
+  
+app/controllers/events_controller.rb:12:in `index'

@@ -9,9 +9,9 @@ class ApplicationController < ActionController::API
   end
 
   def requireO_token
-    token = params.require(:authentication_token)
-    @current_Org = Organizer.find_by(authentication_token: token)
-    unless @current_Org
+    token = params.require(:auth_token)
+    @current_org = Organizer.find_by(auth_token: token)
+    unless @current_org
       render json: {errors: "invalid token"}, status: :unauthorized
     end
   end
