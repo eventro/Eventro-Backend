@@ -1478,3 +1478,11 @@ Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
 NoMethodError (undefined method `events' for nil:NilClass):
   
 app/controllers/events_controller.rb:12:in `index'
+Started GET "/events" for 127.0.0.1 at 2019-02-04 02:42:32 +0300
+Processing by EventsController#all_events as */*
+  Parameters: {"organizer"=>{"name"=>"Org1", "email"=>"org@", "password"=>"[FILTERED]", "phone"=>"0569336645"}, "event"=>{}}
+  [1m[36mEvent Load (6.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/controllers/events_controller.rb:8
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 14.8ms)
+
+

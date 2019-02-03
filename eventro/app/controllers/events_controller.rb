@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-   before_action :requireO_token 
+  before_action :requireO_token , except: [:all_events]
   before_action :set_event, only: [:show, :update, :destroy]
 
 
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
   def show
     render json: @event
-end
+  end
 
   def count_events
     @events = Event.where(:organizer_id => @current_Org.ids).count
