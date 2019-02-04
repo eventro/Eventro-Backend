@@ -9,7 +9,8 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.where(:event_id => @event.id)
+    @comments = @event.comments
+    # @comments = Comment.where(:event_id => @event.id)
     render json: @comments
   end
 
