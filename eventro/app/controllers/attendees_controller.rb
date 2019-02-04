@@ -39,7 +39,7 @@ class AttendeesController < ApplicationController
 
   def attendee_params
     {
-      event_id: params[:event_id],
+      event_id: params[:event_id]
     }
   end
 end
