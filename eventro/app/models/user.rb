@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :delete_all
   has_many :likes, dependent: :delete_all
   has_many :attendees, dependent: :delete_all
+  has_many :events, through: :attendees
+
 
   ## i think here we need to remove foreign key!!
   has_many :followees, :class_name => 'Follow', :foreign_key => 'followee_id'
