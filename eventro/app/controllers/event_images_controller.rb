@@ -19,10 +19,6 @@ class EventImagesController < ApplicationController
     
     
       private
-      def set_event
-        @event = Event.find(params[:event_id])
-      end
-    
       def set_img
         @img = EventImage.find(params[:id])
       end

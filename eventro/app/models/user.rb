@@ -5,10 +5,14 @@ class User < ApplicationRecord
   has_many :comments, dependent: :delete_all
   has_many :likes, dependent: :delete_all
   has_many :attendees, dependent: :delete_all
+  has_many :events, through: :attendees
+
+
+  # has_many :event, through: :comments, :likes, :attendees
 
   ## i think here we need to remove foreign key!!
-  has_many :followees, :class_name => 'Follow', :foreign_key => 'followee_id'
-  has_many :followers, :class_name => 'Follow', :foreign_key => 'follower_id'
+  has_many :followees, :class_name => 'Follow'
+  has_many :followers, :class_name => 'Follow'
 
   before_validation :downcase_email
 
