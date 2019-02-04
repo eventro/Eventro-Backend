@@ -33,7 +33,11 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:event_id, :message)
     # {
     #   event_id: params[:event_id],
+<<<<<<< HEAD
     #   message: params.require(:message)
+=======
+    #   message: params.require(:message),
+>>>>>>> 13c292b8482570fd8b521e9a9d8858f19aec558b
     # }
   end
 end

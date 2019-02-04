@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "/followeecount", to: "follows#countforfollowees"
   end
 
-  resources :organizers, only: [:show, :create, :update] do
+  resources :organizers, only: [:show, :create, :update, :destroy] do
     resources :events, shallow: true do
       resources :comments, only: [:index, :create, :destroy], shallow: true
       resources :event_images, only: [:create, :destroy, :index], shallow: true
