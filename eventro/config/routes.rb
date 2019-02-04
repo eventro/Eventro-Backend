@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create, :update] do
     get "/attendees", to: "attendees#index_user"
+    get "/followers", to: "follows#indexforfollowers"
+    get "/followees", to: "follows#indexforfollowees"
+    get "/followercount", to: "follows#countforfollowers"
+    get "/followeecount", to: "follows#countforfollowees"
   end
 
   resources :organizers, only: [:show, :create, :update] do
