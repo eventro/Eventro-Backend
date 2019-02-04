@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get "/countevents", to: "events#count_events"
   end
 
+  get "/organizers", to: "organizers#index"
   get "/users", to: "users#index"
   get "/events", to: "events#all_events"
   post "/login", to: "sessions#create"
