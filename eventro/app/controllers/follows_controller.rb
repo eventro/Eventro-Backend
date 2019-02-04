@@ -11,7 +11,7 @@ class FollowsController < ApplicationController
         if @follow.followee_id == @current_user.id
         @follow.destroy
         render Json: {message: "Success"}
-
+        end
     end
     
     def countforfollowees

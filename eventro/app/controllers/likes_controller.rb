@@ -12,6 +12,7 @@ class LikesController < ApplicationController
         if  @like.user_id == @current_user.id
         @like.destroy
         render Json: {message: "Success"}
+    end
 
     end
     

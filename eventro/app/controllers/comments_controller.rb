@@ -9,7 +9,8 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.where(:event_id => @event.id)
+    @comments = @event.comments
+    # @comments = Comment.where(:event_id => @event.id)
     render json: @comments
   end
 
@@ -31,7 +32,7 @@ class CommentsController < ApplicationController
   def comment_params
     {
       event_id: params[:event_id],
-      comment: params.require(:comment),
+      comment: params.require(:comment)
     }
   end
 end
