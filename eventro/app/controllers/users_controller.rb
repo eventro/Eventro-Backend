@@ -4,6 +4,11 @@ class UsersController < ApplicationController
 before_action :require_token, only: [:show, :update]
 before_action :set_user, only: [:update]
 
+def index 
+  @users = User.all 
+  render json: @users
+end
+
 def show
   if params[:id] == @current_user.id.to_s
     render json: @current_user
