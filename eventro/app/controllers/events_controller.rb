@@ -1,17 +1,8 @@
 class EventsController < ApplicationController
-<<<<<<< HEAD
   before_action :requireO_token , except: [:all_events , :show , :user_events]
   before_action :set_event, only: [:show, :update, :destroy]
 
   def all_events 
-=======
-  before_action :requireO_token, except: [:all_events, :show, :user_events]
-  # before_action :require_token, only: [:user_events]
-  before_action :set_event, only: [:show, :update, :destroy]
-  # before_action :set_event, only: [:show, :update, :destroy, :remove_event]
-
-  def all_events
->>>>>>> a9f8d78f9cb17b18b819d27d48b9eacef7d76073
     @events = Event.all
     render json: @events
   end
@@ -21,21 +12,6 @@ class EventsController < ApplicationController
     render json: @events
   end
 
-<<<<<<< HEAD
-=======
-  # same concept will be in the attendance
-
-  # def user_events
-  #   @events = @current_user.events
-  #   render json: @events
-  # end
-
-  # def remove_event
-  #   @event.destroy
-  #   render json: {message: "Success"}
-  # end
-
->>>>>>> a9f8d78f9cb17b18b819d27d48b9eacef7d76073
   def show
     render json: @event
   end
