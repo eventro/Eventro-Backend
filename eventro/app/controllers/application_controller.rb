@@ -16,6 +16,10 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
+
   rescue_from(ActionController::ParameterMissing) do |parameter_missing_exception|
     render json: {errors: parameter_missing_exception}, status: :unprocessable_entity
   end
