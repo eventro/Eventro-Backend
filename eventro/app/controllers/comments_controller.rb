@@ -30,9 +30,10 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    {
-      event_id: params[:event_id],
-      message: params.require(:message)
-    }
+    params.require(:comment).permit(:event_id, :message)
+    # {
+    #   event_id: params[:event_id],
+    #   message: params.require(:message),
+    # }
   end
 end
