@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def comment_params
     {
       event_id: params[:event_id],
-      comment: params.require(:comment)
+      message: params.require(:message)
     }
   end
 end

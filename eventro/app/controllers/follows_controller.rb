@@ -15,19 +15,19 @@ class FollowsController < ApplicationController
     end
     
     def countforfollowees
-        @follow = @current_user.followee.count
+        @follow = @current_user.followees.count
     end
 
     def countforfollowers
-        @follow = @current_user.follower.count
+        @follow = @current_user.followers.count
     end
 
     def indexforfollowees
-        @follow = @current_user.followee
+        @follow = @current_user.followees
     end
 
     def indexforfollowers
-        @follow = @current_user.follower
+        @follow = @current_user.followers
     end
 
 
@@ -36,7 +36,7 @@ class FollowsController < ApplicationController
 
     def set_params
         {
-            followee_id: params.require(:followee_id)
+            followee_id: params.require(:followee_id),
             follower_id: params.require(:follower_id)
         }
     end

@@ -2,6 +2,10 @@ class OrganizersController < ApplicationController
   before_action :requireO_token, only: [:show, :update, :destroy]
   before_action :set_organizer, only: [:update, :destroy]
 
+    def index
+      @organizers = Organizer.all
+      render json: @organizers
+    end
   def show
     if params[:id] == @current_org.id.to_s
       render json: @current_org
