@@ -1,7 +1,5 @@
 class EventImagesController < ApplicationController
-
-    # before_action :requireO_token , except: [:all_events , :show , :user_events]
-    before_action :set_event, only: [ :index]
+    before_action :set_event, only: [ :index, :create ]
     before_action :set_img, only: [ :destroy]
     
       def index
@@ -10,7 +8,6 @@ class EventImagesController < ApplicationController
       end
     
       def create
-       logger.info( @event)
         @image = @event.event_images.create(image_params)
         render json: @image
       end
@@ -23,7 +20,7 @@ class EventImagesController < ApplicationController
     
       private
       def set_event
-        @event = Event.find(params[:id])
+        @event = Event.find(params[:event_id])
       end
     
       def set_img

@@ -1,9 +1,6 @@
 class EventsController < ApplicationController
   before_action :requireO_token , except: [:all_events , :show , :user_events]
-  # before_action :require_token, only: [:user_events]
   before_action :set_event, only: [:show, :update, :destroy]
-  # before_action :set_event, only: [:show, :update, :destroy, :remove_event]
-
 
   def all_events 
     @events = Event.all
@@ -14,19 +11,6 @@ class EventsController < ApplicationController
     @events = @current_org.events
     render json: @events
   end
-
-  # same concept will be in the attendance  
-
-  # def user_events
-  #   @events = @current_user.events
-  #   render json: @events
-  # end
-
-  # def remove_event
-  #   @event.destroy
-  #   render json: {message: "Success"}
-  # end
-
 
   def show
     render json: @event
@@ -43,8 +27,10 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    if(@event.organizer_id == @current_org.id)
     @event.destroy
     render json: {message: "Success"}
+    end
   end
 
   def update 
