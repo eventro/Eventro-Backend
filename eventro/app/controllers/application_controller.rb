@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
   end
 
   def set_event
-    @event = Event.find(params[:event_id]) #???
+    @event = Event.find(params[:event_id])
   end
 
   rescue_from(ActionController::ParameterMissing) do |parameter_missing_exception|

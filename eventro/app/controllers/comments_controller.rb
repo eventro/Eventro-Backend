@@ -4,39 +4,34 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def create
-    @comment = Comment.create(comment_body)
+    @comment = @current_user.comments.create(comment_params)
     render json: @comment
   end
 
   def index
-    @comments = Comment.where(:event_id => @event.ids)
+    @comments = Comment.where(:event_id => @event.id)
     render json: @comments
   end
 
   def destroy
-    @comment.destroy
-    render json: {message: "Success"}
+    if @comment.user_id == @current_user.id
+      @comment.destroy
+      render json: {message: "Success"}
+    else
+      render json: {errors: "Unauthorized"}, status: :unauthorized
+    end
   end
 
   private
 
-  #   def set_event
-  #     @event = Event.find(params[:event_id]) #???
-  #   end
-
   def set_comment
-    @comment = Comment.find(params[:comment_id]) #???
+    @comment = Comment.find(params[:id])
   end
 
   def comment_params
     {
-      event_id: params.require(:event_id),
-      user_id: params.require(:user_id),
-    #   comment: params.require(:comment) #maybe?
+      event_id: params[:event_id],
+      comment: params.require(:comment),
     }
-  end
-
-  def comment_body
-    params.require(:comment).permit(:comment)  #WHAT???
   end
 end
