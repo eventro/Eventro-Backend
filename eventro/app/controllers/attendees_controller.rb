@@ -1,6 +1,7 @@
 class AttendeesController < ApplicationController
   before_action :require_token
   before_action :set_event, only: [:index_event, :count, :create, :destroy, :set_attendee]
+  before_action :set_attendee, only: :destroy
 
   def create
     @attend = @current_user.attendees.create(attendee_params)
@@ -8,12 +9,12 @@ class AttendeesController < ApplicationController
   end
 
   def destroy
-    if @attendee.user_id == @current_user.id
-      @attendee.destroy
-      render json: {message: "Success"}
-    else
-      render json: {errors: "Unauthorized"}, status: :unauthorized
-    end
+    # if @attendee.user_id == @current_user.id
+    @attendee.destroy
+    render json: {message: "Success"}
+    # else
+    #   render json: {errors: "Unauthorized"}, status: :unauthorized
+    # end
   end
 
   def index_user
@@ -34,12 +35,14 @@ class AttendeesController < ApplicationController
   private
 
   def set_attendee
-    @attendee = Attendee.where((user_id == @current_user.id) && (event_id == @event.id))
+    # byebug
+    @event = Event.find(params[:event_id])
+    @attendee = Attendee.find_by({user_id: @current_user.id, event_id: @event.id})
   end
 
   def attendee_params
     {
-      event_id: params[:event_id]
+      event_id: params[:event_id],
     }
   end
 end

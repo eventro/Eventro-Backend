@@ -14,7 +14,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :create, :destroy], shallow: true
       resources :event_images, only: [:create, :destroy, :index], shallow: true
       resources :likes, only: [:create, :destroy], shallow: true
-      resources :attendees, only: [:create, :destroy], shallow: true
+      resources :attendees, only: [:create], shallow: true
+      delete "/attendees", to: "attendees#destroy"
       get "/likes", to: "likes#count"
       get "/attendees", to: "attendees#index_event"
       get "/attendees/count", to: "attendees#count"
