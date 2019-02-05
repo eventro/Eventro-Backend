@@ -1,5 +1,5 @@
 class EventImagesController < ApplicationController
-  before_action :require_token
+  before_action :require_token , except: [:index]
   before_action :set_event, only: :index
   before_action :set_image, only: :destroy
 

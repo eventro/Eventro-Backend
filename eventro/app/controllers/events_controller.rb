@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :requireO_token , except: [:all_events, :show  , :user_events]
-  before_action :set_event, only: [ :update, :destroy]
+  before_action :set_event, only: [:update, :destroy]
   before_action :find_params, only: :show
 
   def all_events 

@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :require_token
+  before_action :require_token except: [:count]
   before_action :set_event, only: :count
   before_action :set_like, only: :destroy
 

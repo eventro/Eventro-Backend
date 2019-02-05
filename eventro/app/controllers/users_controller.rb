@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   # NOT SURE IF WE NEED THE SKIP
 #   skip_before_action :verify_authenticity_token, only: [:create] 
-before_action :require_token, only: [:show, :update]
-before_action :set_user, only: [:update]
+before_action :require_token, only: [:update]
+before_action :set_user, only: [:update, :show]
 
 def index 
   @users = User.all 
@@ -10,10 +10,7 @@ def index
 end
 
 def show
-  if params[:id] == @current_user.id.to_s
-    render json: @current_user
-  else
-    render json: {errors: "invalid user"}, status: :unauthorized
+    render json: @user
   end
 end
 
@@ -39,4 +36,4 @@ def set_user
   @user = User.find(params[:id])
 end
 
-end
+
