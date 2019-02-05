@@ -5,8 +5,8 @@ Rails.application.routes.draw do
     get "/attendees", to: "attendees#index_user"
     get "/followers", to: "follows#indexforfollowers"
     get "/followees", to: "follows#indexforfollowees"
-    get "/followercount", to: "follows#countforfollowers"
-    get "/followeecount", to: "follows#countforfollowees"
+    get "/countfollowers", to: "follows#countforfollowers"
+    get "/countfollowees", to: "follows#countforfollowees"
   end
 
   resources :organizers, only: [:show, :create, :update, :destroy] do
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       delete "/attendees", to: "attendees#destroy"
       get "/likes", to: "likes#count"
       get "/attendees", to: "attendees#index_event"
-      get "/attendees/count", to: "attendees#count"
+      get "/countattendees", to: "attendees#count"
     end
     get "/countevents", to: "events#count_events"
   end
