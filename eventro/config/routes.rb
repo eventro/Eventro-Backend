@@ -13,10 +13,11 @@ Rails.application.routes.draw do
     resources :events, shallow: true do
       resources :comments, only: [:index, :create, :destroy], shallow: true
       resources :event_images, only: [:create, :destroy, :index], shallow: true
-      resources :likes, only: [:create, :destroy], shallow: true
+      resources :likes, only: [:create], shallow: true
       resources :attendees, only: [:create], shallow: true
+      delete "/likes", to: "likes#destroy"
       delete "/attendees", to: "attendees#destroy"
-      get "/likes", to: "likes#count"
+      get "/countlikes", to: "likes#count"
       get "/attendees", to: "attendees#index_event"
       get "/countattendees", to: "attendees#count"
     end

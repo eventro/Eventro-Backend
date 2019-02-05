@@ -4,17 +4,19 @@ class AttendeesController < ApplicationController
   before_action :set_attendee, only: :destroy
 
   def create
-    @attend = @current_user.attendees.create(attendee_params)
+    @attend = @current_user.attendees.create!(attendee_params)
     render json: @attend
   end
 
   def destroy
-    # if @attendee.user_id == @current_user.id
-    @attendee.destroy
-    render json: {message: "Success"}
-    # else
-    #   render json: {errors: "Unauthorized"}, status: :unauthorized
-    # end
+    if @attendee
+      if @attendee.user_id == @current_user.id
+        @attendee.destroy
+        render json: {message: "Deleted attendee successfully"}
+      end
+    else
+      render json: {message: "Can't destroy, already not attending"}
+    end
   end
 
   def index_user
