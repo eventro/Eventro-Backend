@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  before_action :require_token
+  before_action :require_token, except: [:index_user, :index_event, :count]
   before_action :set_event, only: [:index_event, :count, :create, :destroy, :set_attendee]
   before_action :set_attendee, only: :destroy
 
