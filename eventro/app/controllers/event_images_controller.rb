@@ -4,18 +4,18 @@ class EventImagesController < ApplicationController
     
     
       def index
-        @image = @event.event_images
+        @images = @event.event_images
       #  @images = EventImage.where(:event_id => @event).all
        render json: @images
       end
     
       def create
-        @image = @current_user.event_images.create(image_params)
+        @image = @current_user.event_images.create(set_params)
         render json: @image
       end
     
       def destroy
-        if @image.user_id == @current_user.id 
+       @image
           @image.destroy
           render json: {message: "Success"}
         end
@@ -26,13 +26,14 @@ class EventImagesController < ApplicationController
     
       def set_params
         {
-          event_id: params.require(:event_id)
-          image: params.require(:image)
+          user_id: params[:id],
+          event_id: params[:event_id],
+          image: params.require(:image).permit(:i)
         }
-
+      end
+     
       def image_params
         params.permit(:image)
       end
     
-    end
-    
+   
