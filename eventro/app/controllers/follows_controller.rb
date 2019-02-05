@@ -1,43 +1,63 @@
 class FollowsController < ApplicationController
-    before_action :require_token
+    before_action :require_token, only: [:create, :destroy]
+    before_action :set_follow, only: :destroy
+    before_action :set_user, except: [:destroy]
     # before_action :set_user, only: [:countforfollowees, :countforfollowers, :indexforfollowees, :indexforfollowers]
 
     def create
-        @follow = @current_user.Follow.Create(set_params)
-        render Json: @follow
+        # @follow = @current_user.followees.create!(follow_params)
+        @follow = Follow.create!(follow_params)
+        # byebug
+        render json: @follow
     end
 
     def destroy
-        if @follow.followee_id == @current_user.id
-        @follow.destroy
-        render Json: {message: "Success"}
-        end
+      if @follow
+         if @follow.follower_id == @current_user.id
+              @follow.destroy
+              render json: {message: "Unfollow successful"}
+           end
+      else
+              render json: {message: "Can't unfollow, already not friend"}
+          end
     end
     
     def countforfollowees
-        @follow = @current_user.followees.count
+        @follow = @user.followees.count
+        render json: @follow
     end
 
     def countforfollowers
-        @follow = @current_user.followers.count
+        @follow = @user.followers.count
+        render json: @follow
     end
 
     def indexforfollowees
-        @follow = @current_user.followees
+        @follows = @user.followees
+        render json: @follows
     end
 
     def indexforfollowers
-        @follow = @current_user.followers
+        @follow = @user.followers
+        render json: @follow
     end
 
 
 
     private
 
-    def set_params
+    def follow_params
+        puts @current_user.id
+        puts @user.id
         {
-            followee_id: params.require(:followee_id),
-            follower_id: params.require(:follower_id)
+            follower_id: @current_user.id,
+            followee_id: @user.id
         }
+    end
+    def set_follow
+        @follow = Follow.find_by({follower_id: @current_user.id, followee_id: params[:user_id]})
+    end
+    def set_user
+        @user = User.find(params[:user_id])
     end
 end
