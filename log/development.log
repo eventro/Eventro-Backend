@@ -10253,3 +10253,172 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organizers/1/events?auth_token=tWBH4gckBwX1dUBL9qncCQoU" for 127.0.0.1 at 2019-02-06 13:49:05 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"tWBH4gckBwX1dUBL9qncCQoU", "organizer_id"=>"1"}
+  [1m[36mOrganizer Load (4.7ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "tWBH4gckBwX1dUBL9qncCQoU"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 1]]
+  ↳ app/controllers/events_controller.rb:13
+Completed 200 OK in 78ms (Views: 28.8ms | ActiveRecord: 25.5ms)
+
+
+Started POST "/organizers" for 127.0.0.1 at 2019-02-06 13:49:15 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"user"=>{"email"=>"n", "password"=>"[FILTERED]", "name"=>"n", "phone"=>"n"}, "organizer"=>{}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[36mOrganizer Exists (7.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "n"], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[35m (5.9ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:18
+Completed 400 Bad Request in 161ms (Views: 0.6ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:49:15 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (0.3ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:49:58 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (0.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:50:53 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (0.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:56:34 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (6.8ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 28ms (Views: 1.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:56:35 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (8.6ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 2.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:57:08 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (24.1ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 55ms (Views: 2.2ms | ActiveRecord: 24.1ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 13:57:08 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (10.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 13ms (Views: 0.2ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-06 14:26:11 +0300
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"email"=>"eer@gmail.com", "password"=>"[FILTERED]", "username"=>"ghadeer_ga", "name"=>"Ghadeer", "date_of_birth"=>"22/3/1993"}}
+  [1m[36mUser Load (7.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 41ms (Views: 16.6ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2019-02-06 15:04:09 +0300
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"email"=>"eer@gmail.com", "password"=>"[FILTERED]", "username"=>"ghadeer_ga", "name"=>"Ghadeer", "date_of_birth"=>"22/3/1993"}}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 72ms (Views: 34.2ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/organizers" for 127.0.0.1 at 2019-02-06 15:17:34 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"user"=>{"email"=>"nnnnnn", "password"=>"[FILTERED]", "name"=>"n", "phone"=>"n"}, "organizer"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[36mOrganizer Exists (12.8ms)[0m  [1m[34mSELECT  1 AS one FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", "nnnnnn"], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[36mOrganizer Create (16.9ms)[0m  [1m[32mINSERT INTO "organizers" ("email", "password_digest", "auth_token", "name", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "nnnnnn"], ["password_digest", "$2a$10$OrpF85ER52xKeb2nHj1P6uX7oFPPUiLPByF1Amay6/XDstgm16s56"], ["auth_token", "h1Hise842kPBpGtDiQyxfAEP"], ["name", "n"], ["phone", "n"], ["created_at", "2019-02-06 12:17:35.333040"], ["updated_at", "2019-02-06 12:17:35.333040"]]
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/organizers_controller.rb:18
+Completed 200 OK in 284ms (Views: 5.2ms | ActiveRecord: 38.3ms)
+
+
+Started GET "/organizers/20/events?auth_token=h1Hise842kPBpGtDiQyxfAEP" for 127.0.0.1 at 2019-02-06 15:17:35 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"h1Hise842kPBpGtDiQyxfAEP", "organizer_id"=>"20"}
+  [1m[36mOrganizer Load (0.4ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "h1Hise842kPBpGtDiQyxfAEP"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."organizer_id" = $1[0m  [["organizer_id", 20]]
+  ↳ app/controllers/events_controller.rb:13
+Completed 200 OK in 57ms (Views: 13.1ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/organizers" for 127.0.0.1 at 2019-02-06 15:21:31 +0300
+Processing by OrganizersController#create as */*
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "name"=>"", "phone"=>""}, "organizer"=>{}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[36mOrganizer Exists (10.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organizers" WHERE "organizers"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organizers_controller.rb:18
+  [1m[35m (5.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/organizers_controller.rb:18
+Completed 400 Bad Request in 223ms (Views: 5.5ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/organizers/undefined/events?auth_token=undefined" for 127.0.0.1 at 2019-02-06 15:21:32 +0300
+Processing by EventsController#index as */*
+  Parameters: {"auth_token"=>"undefined", "organizer_id"=>"undefined"}
+  [1m[36mOrganizer Load (1.2ms)[0m  [1m[34mSELECT  "organizers".* FROM "organizers" WHERE "organizers"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "undefined"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13
+Filter chain halted as :requireO_token rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.8ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddAvatarToUser (20190206122541)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (33.2ms)[0m  [1m[35mALTER TABLE "users" ADD "image" character varying[0m
+  ↳ db/migrate/20190206122541_add_avatar_to_user.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190206122541"]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (5.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5428064407161053385)[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/noni/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
