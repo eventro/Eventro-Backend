@@ -1,5 +1,5 @@
 class OrganizersController < ApplicationController
-  before_action :requireO_token, only: [:show, :update, :destroy]
+  before_action :requireO_token, only: [:update, :destroy]
   before_action :set_organizer, only: [:update, :destroy]
 
     def index
@@ -38,7 +38,7 @@ class OrganizersController < ApplicationController
   private
 
   def organizer_params
-    params.require(:organizer).permit(:email, :password, :name, :phone)
+    params.require(:user).permit(:email, :password, :name, :phone)
   end
 
   def set_organizer
